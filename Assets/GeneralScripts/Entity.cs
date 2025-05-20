@@ -1,14 +1,11 @@
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float speed;
-    [SerializeField] float sensibility;
-    Vector3 direction;
+    [SerializeField] protected float speed;
+    [SerializeField] protected float sensibility;
+    protected Vector3 direction;
 
-    public virtual void Movement()
-    {
-
-    }
+    public abstract void Movement();
 }
