@@ -4,51 +4,57 @@ public class Car : Entity
 {
     [SerializeField] Rigidbody rigidBody;
 
+    public WheelCollider frontLeft;
+    public WheelCollider frontRight;
+    public WheelCollider rearLeft;
+    public WheelCollider rearRight;
+
+    public Transform frontLeftTransform;
+    public Transform frontRightTransform;
+    public Transform rearLeftTransform;
+    public Transform rearRightTransform;
+
+    public float motorForce = 1500f;
+    public float maxSteerAngle = 30f;
+
     public override void Movement()
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
         direction = new Vector3();
     }
 
-    public void Start()
+    void FixedUpdate()
     {
-        rigidBody = gameObject.GetComponent<Rigidbody>();
+        float motor = Input.GetAxis("Vertical") * motorForce;
+        float steer = Input.GetAxis("Horizontal") * maxSteerAngle;
+
+        // Direção
+        frontLeft.steerAngle = steer;
+        frontRight.steerAngle = steer;
+
+        // Tração
+        rearLeft.motorTorque = motor;
+        rearRight.motorTorque = motor;
+
+        UpdateWheels();
     }
 
-    public void Update()
+    void UpdateWheels()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            rigidBody.AddForce(transform.forward * speed * Time.deltaTime);
-        }
-        
-        if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
-        {
-            rigidBody.AddForce(transform.forward * speed * Time.deltaTime);
-            transform.Rotate(0f, 1 * Time.deltaTime, 0f);
-        }
+        UpdateSingleWheel(frontLeft, frontLeftTransform);
+        UpdateSingleWheel(frontRight, frontRightTransform);
+        UpdateSingleWheel(rearLeft, rearLeftTransform);
+        UpdateSingleWheel(rearRight, rearRightTransform);
 
-        if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
-        {
-            rigidBody.AddForce(transform.forward * speed * Time.deltaTime);
-            transform.Rotate(0f, -1 * Time.deltaTime, 0f);
-        }
+        Debug.Log("Estou entrando");
+    }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            rigidBody.AddForce(-1 * transform.forward * speed * Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
-        {
-            rigidBody.AddForce(-1 * transform.forward * speed * Time.deltaTime);
-            transform.Rotate(0f, 1 * Time.deltaTime, 0f);
-        }
-
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
-        {
-            rigidBody.AddForce(-1 * transform.forward * speed * Time.deltaTime);
-            transform.Rotate(0f, -1 * Time.deltaTime, 0f);
-        }
+    void UpdateSingleWheel(WheelCollider collider, Transform trans)
+    {
+        Vector3 pos;
+        Quaternion rot;
+        collider.GetWorldPose(out pos, out rot);
+        trans.position = pos;
+        trans.rotation = rot;
     }
 }
