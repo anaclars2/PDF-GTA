@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class CameraMove : MonoBehaviour
+public class CameraMove : Entity
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Movement()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
