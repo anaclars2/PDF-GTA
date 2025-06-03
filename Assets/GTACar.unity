@@ -144,8 +144,8 @@ Transform:
   m_GameObject: {fileID: 62842152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.7017441, y: -0.37000003, z: -0.012362}
+  m_LocalScale: {x: 0.94697, y: 0.94697, z: 0.94697}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6028353729449784570}
@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 315063407}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0389433, y: -0.684, z: -3.058}
+  m_LocalPosition: {x: 2.0389433, y: -0.684, z: -3.216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -258,7 +258,7 @@ WheelCollider:
   m_GameObject: {fileID: 315063407}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.73
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -500,7 +500,7 @@ Transform:
   m_GameObject: {fileID: 523747056}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0389433, y: -0.681, z: 2.575}
+  m_LocalPosition: {x: 2.0389433, y: -0.674, z: 2.588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -515,7 +515,7 @@ WheelCollider:
   m_GameObject: {fileID: 523747056}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.73
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -570,8 +570,8 @@ Transform:
   m_GameObject: {fileID: 677370628}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.6459203, y: -0.8311359, z: 2.5850558}
-  m_LocalScale: {x: 0.01, y: 0.009999999, z: 0.009999999}
+  m_LocalPosition: {x: -2.1978998, y: -1.15706, z: 2.4356}
+  m_LocalScale: {x: 0.0094697, y: 0.009469699, z: 0.009469699}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 682285760}
@@ -604,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 682285759}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.5136242, y: 9.230901, z: 2.8080878}
+  m_LocalPosition: {x: -1.5136242, y: 26, z: 4}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -619,7 +619,7 @@ WheelCollider:
   m_GameObject: {fileID: 682285759}
   serializedVersion: 2
   m_Center: {x: 0, y: 0.18, z: -0.08}
-  m_Radius: 0.7
+  m_Radius: 0.73
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -1026,8 +1026,8 @@ Transform:
   m_GameObject: {fileID: 1553490281}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.75, y: -0.37000003, z: -0.13}
+  m_LocalScale: {x: 0.94697, y: 0.94697, z: 0.94697}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1702013536}
@@ -1075,7 +1075,7 @@ WheelCollider:
   m_GameObject: {fileID: 1702013535}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.7
+  m_Radius: 0.73
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -1195,8 +1195,8 @@ Transform:
   m_GameObject: {fileID: 2082237600}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.82, y: -0.37, z: 0.114}
+  m_LocalScale: {x: 0.94697, y: 0.94697, z: 0.94697}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6070397167827515085}
@@ -1298,6 +1298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652938282551}
   - component: {fileID: 1219716377}
+  - component: {fileID: 919132148750318735}
   - component: {fileID: 919132148750318734}
   m_Layer: 0
   m_Name: CarroGTA
@@ -1330,9 +1331,31 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &919132148750318735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148750318733}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4e08d655e1e1a4f87eb920e961c289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontLeft: {fileID: 682285761}
+  frontRight: {fileID: 523747058}
+  rearLeft: {fileID: 1702013537}
+  rearRight: {fileID: 315063409}
+  frontLeftTransform: {fileID: 677370629}
+  frontRightTransform: {fileID: 2082237601}
+  rearLeftTransform: {fileID: 1553490282}
+  rearRightTransform: {fileID: 62842153}
+  motorForce: 1500
+  maxSteerAngle: 30
 --- !u!33 &1118424761811438682
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1404,6 +1427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8785347956116715079}
   - component: {fileID: 1118424761811438682}
+  - component: {fileID: 8785347956116715080}
   - component: {fileID: 1725237556481476951}
   m_Layer: 0
   m_Name: carro
@@ -1607,7 +1631,7 @@ Transform:
   m_GameObject: {fileID: 7319655794356091477}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.9002752, y: -0.8311359, z: -3.0512447}
+  m_LocalPosition: {x: 2.061, y: -0.831, z: -3.206}
   m_LocalScale: {x: 0.01, y: 0.009999999, z: 0.009999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2073,6 +2097,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652938282551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8785347956116715080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467786172211223397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4e08d655e1e1a4f87eb920e961c289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontLeft: {fileID: 682285761}
+  frontRight: {fileID: 523747058}
+  rearLeft: {fileID: 1702013537}
+  rearRight: {fileID: 315063409}
+  frontLeftTransform: {fileID: 677370629}
+  frontRightTransform: {fileID: 2082237601}
+  rearLeftTransform: {fileID: 1553490282}
+  rearRightTransform: {fileID: 62842153}
+  motorForce: 1500
+  maxSteerAngle: 50
 --- !u!4 &8991627629181346231
 Transform:
   m_ObjectHideFlags: 0
@@ -2142,7 +2188,7 @@ Transform:
   m_GameObject: {fileID: 7220728310598768492}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9.2, y: 18.3, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
