@@ -15,6 +15,12 @@ public class CameraMove : MonoBehaviour
     float currentX = 0f;
     float currentY = 20f;
 
+    public Transform getTarget
+    {
+        get { return target; }
+        set { target = value; }
+    }
+
     void LateUpdate()
     {
         if (target == null) return;

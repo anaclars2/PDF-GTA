@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.SceneView;
 
 public class Character : MonoBehaviour
 {
     [SerializeField] bool isInCar = false;
     Car currentCar;
     [SerializeField] GameObject playerModel;
+    [SerializeField] CameraMove cameraMove;
 
     [Header("Interact Settings")]
     [SerializeField] float detectionRadius = 3f;
@@ -26,6 +28,12 @@ public class Character : MonoBehaviour
     int armsLayerIndex;
     [SerializeField] bool isBoxing = false;
     [SerializeField] float speed;
+    float gravity = -9.81f;
+    Vector3 verticalVelocity = Vector3.zero;
+
+
+    Rigidbody rigidbody;
+    Vector3 inputDirection; 
 
     private void Start()
     {
@@ -167,6 +175,7 @@ public class Character : MonoBehaviour
         if (currentCar != null)
         {
             isInCar = true;
+            cameraMove.getTarget = this.currentCar.transform;
 
             // desativando controle do personagem e ativando do carro
             SetRagdollState(false);
@@ -180,6 +189,7 @@ public class Character : MonoBehaviour
         if (isInCar != true || currentCar == null) return;
 
         isInCar = false;
+        cameraMove.getTarget = this.gameObject.transform;
         currentCar.getCanMove = false;
         transform.SetParent(null);
 
@@ -254,5 +264,11 @@ public class Character : MonoBehaviour
 
         Animator animator = GetComponent<Animator>();
         if (animator != null) { animator.enabled = !enabled; }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        SetRagdollState(true); 
+        animatorController.enabled = false;
     }
 }

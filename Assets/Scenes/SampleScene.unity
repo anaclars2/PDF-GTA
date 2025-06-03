@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 70983184}
   - component: {fileID: 70983185}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168722578}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roda3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8286034987496443810, guid: e0ce9c4829fd9214fb9de954882226b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.24
       objectReference: {fileID: 0}
     - target: {fileID: 8286034987496443810, guid: e0ce9c4829fd9214fb9de954882226b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -458,18 +458,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInCar: 0
   playerModel: {fileID: 190105416}
+  cameraMove: {fileID: 457591113}
   detectionRadius: 3
   interactableLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   obstructionLayer:
     serializedVersion: 2
     m_Bits: 1
   interactFeedback: {fileID: 0}
   outlineMaterial: {fileID: 0}
+  rotationSpeed: 10
   animatorController: {fileID: 190105415}
   isBoxing: 0
-  speed: 6
+  speed: 2
 --- !u!95 &190105415 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4304652291980058567, guid: e0ce9c4829fd9214fb9de954882226b5, type: 3}
@@ -497,7 +499,7 @@ GameObject:
   - component: {fileID: 205482368}
   - component: {fileID: 205482367}
   - component: {fileID: 205482366}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: carro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292091651}
   - component: {fileID: 292091652}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,7 +920,7 @@ Transform:
   m_GameObject: {fileID: 457591108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -953,7 +955,7 @@ GameObject:
   - component: {fileID: 488192043}
   - component: {fileID: 488192045}
   - component: {fileID: 488192044}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1042,7 @@ GameObject:
   - component: {fileID: 541474541}
   - component: {fileID: 541474539}
   - component: {fileID: 541474543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CarroGTA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1107,7 @@ Transform:
   m_GameObject: {fileID: 541474538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.32, y: 1.1242168, z: 1.1286355}
+  m_LocalPosition: {x: 2.32, y: 2.377, z: -0.16}
   m_LocalScale: {x: 0.4957021, y: 0.4957021, z: 0.4957021}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1119,6 +1121,7 @@ Transform:
   - {fileID: 1268714605}
   - {fileID: 168722578}
   - {fileID: 1549764572}
+  - {fileID: 627834884}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &541474543
@@ -1133,13 +1136,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10d710375baae24a9788ccbedfb7eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
+  rigidBody: {fileID: 541474539}
   frontLeft: {fileID: 1644768114}
   frontRight: {fileID: 718258006}
   rearLeft: {fileID: 292091652}
   rearRight: {fileID: 70983185}
   motorForce: 1500
   maxSteerAngle: 30
+  exitPoint: {fileID: 627834884}
+--- !u!1 &627834883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627834884}
+  m_Layer: 3
+  m_Name: ExitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &627834884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627834883}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 541474542}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718258004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 718258005}
   - component: {fileID: 718258006}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1257,7 @@ GameObject:
   - component: {fileID: 904595335}
   - component: {fileID: 904595337}
   - component: {fileID: 904595336}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1306,7 +1341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 906332020}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roda1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1493,7 +1528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1268714605}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roda2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,7 +1563,7 @@ GameObject:
   - component: {fileID: 1308578773}
   - component: {fileID: 1308578775}
   - component: {fileID: 1308578774}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,35 +1649,14 @@ GameObject:
   - component: {fileID: 1454021119}
   - component: {fileID: 1454021118}
   - component: {fileID: 1454021117}
-  - component: {fileID: 1454021116}
+  - component: {fileID: 1454021120}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!65 &1454021116
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454021115}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1454021117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1705,12 +1719,33 @@ Transform:
   m_GameObject: {fileID: 1454021115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14372993, y: -1.81, z: 6.9599295}
+  m_LocalPosition: {x: 0.14372993, y: 1, z: 6.9599295}
   m_LocalScale: {x: 39.75, y: 1, z: 48.53}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1454021120
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454021115}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1496132707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +1909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1549764572}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roda4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,7 +1944,7 @@ GameObject:
   - component: {fileID: 1589164215}
   - component: {fileID: 1589164217}
   - component: {fileID: 1589164216}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mesh4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1994,7 +2029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644768113}
   - component: {fileID: 1644768114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
