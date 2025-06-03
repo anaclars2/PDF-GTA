@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Character : Entity
+public class Character : MonoBehaviour
 {
     [SerializeField] bool isInCar = false;
     Car currentCar;
@@ -25,6 +25,7 @@ public class Character : Entity
     float boxingWeight = 0f;
     int armsLayerIndex;
     [SerializeField] bool isBoxing = false;
+    [SerializeField] float speed;
 
     private void Start()
     {
@@ -98,7 +99,7 @@ public class Character : Entity
 
     private void Interact()
     {
-        if (isInCar == false && currentTarget != null && currentTarget.GetComponent<Car>())
+        if (isInCar == false && currentTarget != null && currentTarget.GetComponent<Car>() != null)
         {
             Debug.Log("Interacting with: " + currentTarget.name);
 
@@ -195,11 +196,12 @@ public class Character : Entity
     void HandleMovement()
     {
         float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        if (Input.GetButton("Horizontal"))
+        if (x != 0 || z != 0)
         {
-            Vector3 move = transform.right * x + transform.forward;
-            characterController.Move(move * speed * Time.deltaTime);
+            Vector3 move = transform.right * x + transform.forward * z;
+            characterController.Move(move.normalized * speed * Time.deltaTime);
 
             // controlando valor de animacao da corrida
             if (Input.GetKey(inputRunning)) { moveValue = Mathf.MoveTowards(moveValue, 1f, Time.deltaTime); }

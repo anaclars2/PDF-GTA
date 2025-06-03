@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Car : Entity
+public class Car : MonoBehaviour
 {
     [SerializeField] Rigidbody rigidBody;
 
@@ -25,22 +25,15 @@ public class Car : Entity
         get { return exitPoint; }
     }
 
-    public void Movement()
-    {
-        rigidBody = gameObject.GetComponent<Rigidbody>();
-        direction = new Vector3();
-    }
-
     void FixedUpdate()
     {
+        if (canMove == false) { return; }
+
         float motor = Input.GetAxis("Vertical") * motorForce;
         float steer = Input.GetAxis("Horizontal") * maxSteerAngle;
 
-        // Direção
         frontLeft.steerAngle = steer;
         frontRight.steerAngle = steer;
-
-        // Tração
         rearLeft.motorTorque = motor;
         rearRight.motorTorque = motor;
 
@@ -53,16 +46,12 @@ public class Car : Entity
         UpdateSingleWheel(frontRight, frontRight.gameObject.transform);
         UpdateSingleWheel(rearLeft, rearLeft.gameObject.transform);
         UpdateSingleWheel(rearRight, rearRight.gameObject.transform);
-
-        Debug.Log("Estou entrando");
     }
 
-    void UpdateSingleWheel(WheelCollider collider, Transform trans)
+    void UpdateSingleWheel(WheelCollider collider, Transform wheelTransform)
     {
-        Vector3 pos;
-        Quaternion rot;
-        collider.GetWorldPose(out pos, out rot);
-        trans.position = pos;
-        trans.rotation = rot;
+        collider.GetWorldPose(out Vector3 pos, out Quaternion rot);
+        wheelTransform.position = pos;
+        wheelTransform.rotation = rot;
     }
 }
