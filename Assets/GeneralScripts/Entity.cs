@@ -7,5 +7,5 @@ public abstract class Entity : MonoBehaviour
     [SerializeField] protected float sensibility;
     protected Vector3 direction;
 
-    public abstract void Movement();
+    // public abstract void Movement();
 }

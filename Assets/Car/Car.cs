@@ -4,20 +4,28 @@ public class Car : Entity
 {
     [SerializeField] Rigidbody rigidBody;
 
-    public WheelCollider frontLeft;
-    public WheelCollider frontRight;
-    public WheelCollider rearLeft;
-    public WheelCollider rearRight;
+    [SerializeField] WheelCollider frontLeft;
+    [SerializeField] WheelCollider frontRight;
+    [SerializeField] WheelCollider rearLeft;
+    [SerializeField] WheelCollider rearRight;
 
-    public Transform frontLeftTransform;
-    public Transform frontRightTransform;
-    public Transform rearLeftTransform;
-    public Transform rearRightTransform;
+    [SerializeField] float motorForce = 1500f;
+    [SerializeField] float maxSteerAngle = 30f;
+    bool canMove = false;
+    Transform exitPoint;
 
-    public float motorForce = 1500f;
-    public float maxSteerAngle = 30f;
+    public bool getCanMove
+    {
+        set { canMove = value; }
+        get { return canMove; }
+    }
+    public Transform getExitPoint
+    {
+        set { exitPoint = value; }
+        get { return exitPoint; }
+    }
 
-    public override void Movement()
+    public void Movement()
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
         direction = new Vector3();
@@ -41,10 +49,10 @@ public class Car : Entity
 
     void UpdateWheels()
     {
-        UpdateSingleWheel(frontLeft, frontLeftTransform);
-        UpdateSingleWheel(frontRight, frontRightTransform);
-        UpdateSingleWheel(rearLeft, rearLeftTransform);
-        UpdateSingleWheel(rearRight, rearRightTransform);
+        UpdateSingleWheel(frontLeft, frontLeft.gameObject.transform);
+        UpdateSingleWheel(frontRight, frontRight.gameObject.transform);
+        UpdateSingleWheel(rearLeft, rearLeft.gameObject.transform);
+        UpdateSingleWheel(rearRight, rearRight.gameObject.transform);
 
         Debug.Log("Estou entrando");
     }
