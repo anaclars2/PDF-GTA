@@ -8,7 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - Soltam
+=======
+  - Interactable
+>>>>>>> b80e1cdfe831eb1d3b902ed2ce95ca13ca57cfaa
   - Water
   - UI
   - 
