@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class Car : Entity
+public class CarController : MonoBehaviour
 {
-    [SerializeField] Rigidbody rigidBody;
-
     public WheelCollider frontLeft;
     public WheelCollider frontRight;
     public WheelCollider rearLeft;
@@ -17,22 +15,16 @@ public class Car : Entity
     public float motorForce = 1500f;
     public float maxSteerAngle = 30f;
 
-    public override void Movement()
-    {
-        rigidBody = gameObject.GetComponent<Rigidbody>();
-        direction = new Vector3();
-    }
-
     void FixedUpdate()
     {
         float motor = Input.GetAxis("Vertical") * motorForce;
         float steer = Input.GetAxis("Horizontal") * maxSteerAngle;
 
-        // DireÃ§Ã£o
+        // Direção
         frontLeft.steerAngle = steer;
         frontRight.steerAngle = steer;
 
-        // TraÃ§Ã£o
+        // Tração
         rearLeft.motorTorque = motor;
         rearRight.motorTorque = motor;
 
@@ -45,8 +37,6 @@ public class Car : Entity
         UpdateSingleWheel(frontRight, frontRightTransform);
         UpdateSingleWheel(rearLeft, rearLeftTransform);
         UpdateSingleWheel(rearRight, rearRightTransform);
-
-        Debug.Log("Estou entrando");
     }
 
     void UpdateSingleWheel(WheelCollider collider, Transform trans)
@@ -58,3 +48,4 @@ public class Car : Entity
         trans.rotation = rot;
     }
 }
+
