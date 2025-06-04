@@ -28,20 +28,12 @@ public class Car : MonoBehaviour
 
     private void Update()
     {
-        if (exitPoint != null && canMove == true)
+        if (exitPoint != null && canMove)
         {
-            float centerY = GetComponent<MeshCollider>()?.bounds.center.y
-                          ?? transform.position.y;
-
-            Vector3 offset = transform.TransformDirection(exitOffset);
-            Vector3 desiredPosition = new Vector3(
-                transform.position.x + offset.x,
-                centerY,
-                transform.position.z + offset.z
-            );
-
+            Vector3 offset = transform.TransformDirection(new Vector3(exitOffset.x, 0f, exitOffset.z));
+            Vector3 desiredPosition = transform.position + offset;
+            desiredPosition.y = exitPoint.position.y;
             exitPoint.position = desiredPosition;
-            exitPoint.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
         }
     }
 

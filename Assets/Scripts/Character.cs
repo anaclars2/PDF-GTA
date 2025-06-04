@@ -33,7 +33,7 @@ public class Character : MonoBehaviour
 
 
     Rigidbody rigidbody;
-    Vector3 inputDirection; 
+    Vector3 inputDirection;
 
     private void Start()
     {
@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
             {
                 if (hit.collider.gameObject == collider.gameObject)
                 {
-                    Debug.Log("Interactive object detected: " + collider.name);
+                    // Debug.Log("Interactive object detected: " + collider.name);
                     if (distance < closestDistance) // se tiver mais de varios objetos determiando o mais perto
                     {
                         closest = collider.gameObject;
@@ -93,7 +93,10 @@ public class Character : MonoBehaviour
                         }
                     }
                 }
-                else { Debug.Log(hit.collider.gameObject.name + " is blocking the view to " + collider.name); }
+                else
+                {
+                    // Debug.Log(hit.collider.gameObject.name + " is blocking the view to " + collider.name);
+                }
 
                 Debug.DrawRay(transform.position, direction * distance, Color.red); // desenhando o raycast
             }
@@ -109,7 +112,7 @@ public class Character : MonoBehaviour
     {
         if (isInCar == false && currentTarget != null && currentTarget.GetComponent<Car>() != null)
         {
-            Debug.Log("Interacting with: " + currentTarget.name);
+            // Debug.Log("Interacting with: " + currentTarget.name);
 
             if (interactFeedback != null) { interactFeedback.SetActive(false); }
             Car target = currentTarget.GetComponent<Car>();
@@ -268,7 +271,7 @@ public class Character : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        SetRagdollState(true); 
-        animatorController.enabled = false;
+        // SetRagdollState(true); 
+        // animatorController.enabled = false;
     }
 }

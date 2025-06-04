@@ -391,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8286034987496443810, guid: e0ce9c4829fd9214fb9de954882226b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.24
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 8286034987496443810, guid: e0ce9c4829fd9214fb9de954882226b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -468,7 +468,6 @@ MonoBehaviour:
     m_Bits: 1
   interactFeedback: {fileID: 0}
   outlineMaterial: {fileID: 0}
-  rotationSpeed: 10
   animatorController: {fileID: 190105415}
   isBoxing: 0
   speed: 2
